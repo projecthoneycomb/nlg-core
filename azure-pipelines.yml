@@ -20,7 +20,8 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    cp node_modules build/main/node_modules
+    mkdir /build/main/node_modules
+    cp -a /node_modules/. /build/main/node_modules
   displayName: 'copy node modules'
 
 - task: ArchiveFiles@2
