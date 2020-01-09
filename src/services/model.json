@@ -110,8 +110,8 @@
         }
       },
       "explain": [
-        "Compared to the rest of {companyName}, this is a significant number of leavers and the pattern indicates a disatisfaction.",
-        "This is substantially higher than other departments at {companyName} and could indicate that the employees of {department} are not as satisified as they could be. "
+        "Compared to the rest of {companyName}, this is a significant number of leavers and the pattern indicates a high level of job disatisfaction.",
+        "This is substantially higher than other departments at {companyName} and indicated that the employees of {departmentName} are not as satisified as they could be with their job. "
        ],
        "advise": [
         "Ensure that this department is allowed to give their feedback to any changes that are made to projects, people or conditions.",
