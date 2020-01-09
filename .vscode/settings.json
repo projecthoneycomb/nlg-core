@@ -1,5 +1,8 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib"
-  // "typescript.implementationsCodeLens.enabled": true
-  // "typescript.referencesCodeLens.enabled": true
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/ef492f20-94bd-47a4-83d2-01e200c463a6/resourceGroups/mojito-nlg/providers/Microsoft.Web/sites/mojito-nlg",
+  "appService.deploySubpath": ""
 }

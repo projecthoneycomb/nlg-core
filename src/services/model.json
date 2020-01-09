@@ -1,0 +1,306 @@
+{
+  "name":"nameofmodel",
+  "version": {
+    "model": "1.0.0",
+    "api": "1.0.0"
+  },
+  "entities": [
+    {
+      "id": "departmentName",
+      "name": "Department Name",
+      "type": "basic"
+    },
+    {
+      "id": "companyName",
+      "name": "Company Name",
+      "type": "basic"
+    },
+    {
+      "id": "leavers",
+      "name": "Leavers",
+      "type": "count",
+      "options": {
+        "descriptor": "leaver",
+        "pluralize": true
+      }
+    },
+    {
+      "id": "startDate",
+      "name": "Start Date",
+      "type": "date",
+      "options": {
+        "format": "calendar"
+      }
+    }
+  ],
+  "nuances": [
+    "something"
+  ],
+  "axis": {
+    "primary": {
+      "from": 0,
+      "to": 1,
+      "threshold": 0.1
+    },
+    "turbulence": {
+      "from": 0,
+      "to": 1,
+      "threshold": 0.1
+    }
+  },
+  "display": {
+    "resolution": {
+      "x": 2,
+      "y": 2
+    }
+  },
+  "describe": [
+    "Since {startDate}, {leavers} have left {departmentName}.",
+    "Since {startDate}, the {departmentName} department has had {leavers} leave.",
+    "The {departmentName} department has had {leavers} leave since {startDate}."
+  ],
+  "data": [
+    {
+      "id": "highPrimary-highTurbulence",
+      "range": {
+        "primary": {
+          "from": 0.6,
+          "to": 1
+        },
+        "turbulence": {
+          "from": 0.9,
+          "to": 1
+        }
+      },
+      "explain": [
+        "Compared to the rest of {companyName}, this is a significant number of leavers and {departmentName} has had peaks of muiltple people leaving around the same time.",
+        "This is substantially higher than other departments at {companyName} and most of those departures happened at around the same time."
+      ],
+      "advise": [
+        "This would indicate that a specific change, project or person could have triggered this to happen. Try to look at the months before the peak and reflect on what could have triggered this.",
+        "That pattern could represent that a specific change, project or person might have been a factor in these departures. If you look back over the months before you might be able to determine what caused this spike."
+      ],
+      "associated": {
+        "entities": [
+          "companyName",
+          "departmentName",
+          "leavers",
+          "startDate"
+        ],
+        "nuances": [
+          {
+            "nuance": "something",
+            "values": [
+              "This represents an additional boolean component to this explaination."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "highPrimary-middleTurbulence",
+      "range": {
+        "primary": {
+          "from": 0.5,
+          "to": 1
+        },
+        "turbulence": {
+          "from": 0.5,
+          "to": 0.9
+        }
+      },
+      "explain": [
+        "Compared to the rest of {companyName}, this is a significant number of leavers and {departmentName} has had ---.",
+        "This is substantially higher than other departments at {companyName} and ---."
+       ],
+       "advise": [
+        "Ensure that this department is allowed to give their feedback to any changes that are made to projects, people or conditions."
+       ],
+      "associated": {
+        "entities": [
+          "companyName",
+          "departmentName",
+          "leavers",
+          "startDate"
+        ]
+      }
+    },
+    {
+      "id": "highPrimary-lowTurbulence",
+      "range": {
+        "primary": {
+          "from": 0.5,
+          "to": 1
+        },
+        "turbulence": {
+          "from": 0,
+          "to": 0.5
+        }
+      },
+      "explain": [
+        "Compared to the rest of {companyName}, this is a significant number of leavers but the departures have occured consistantly across the year. This normally means there is no one reason for the high number of leavers.",
+        "While this is substantially higher than other departments at {companyName}, the departures have occured consistantly across the year. This patterns usually means there is no single reason for the high number of leavers."
+      ],
+      "advise": [
+        "You can"
+      ],
+      "associated": {
+        "entities": [
+          "companyName",
+          "departmentName",
+          "leavers",
+          "startDate"
+        ]
+      }
+    },
+    {
+      "id": "lowPrimary-lowTurbulence",
+      "range": {
+        "primary": {
+          "from": 0,
+          "to": 0.5
+        },
+        "turbulence": {
+          "from": 0,
+          "to": 0.5
+        }
+      },
+      "explain": [ "This is lowPrimary-lowTurbulence" ],
+      "associated": {
+        "entities": [
+          "companyName",
+          "departmentName",
+          "leavers",
+          "startDate"
+        ]
+      }
+    },
+    {
+      "id": "middlePrimary-middleTurbulence",
+      "range": {
+        "primary": {
+          "from": 0.4,
+          "to": 0.6
+        },
+        "turbulence": {
+          "from": 0.4,
+          "to": 0.7
+        }
+      },
+      "explain": [
+        "This is middlePrimary-middleTurbulence than the rest of {companyName} but most of those departures happened around the same time.",
+        "While this is middlePrimary-middleTurbulence than other departments at {companyName}, those departures happened at around the same time."
+      ],
+      "associated": {
+        "entities": [
+          "companyName",
+          "departmentName",
+          "leavers",
+          "startDate"
+        ]
+      }
+    },
+    {
+      "id": "middlePrimary-highTurbulence",
+      "range": {
+        "primary": {
+          "from": 0.4,
+          "to": 0.6
+        },
+        "turbulence": {
+          "from": 0.7,
+          "to": 1
+        }
+      },
+      "explain": [
+        "This is middlePrimary-highTurbulence than the rest of {companyName} but most of those departures happened around the same time.",
+        "While this is middlePrimary-highTurbulence than other departments at {companyName}, those departures happened at around the same time."
+      ],
+      "advise": [
+        "This would indicate that a specific change, project or person could have triggered this to happen. Try to look at the months before the peak and reflect on what could have triggered this.",
+        "That pattern could represent that a specific change, project or person might have been a factor in these departures. If you look back over the months before you might be able to determine what caused this spike."
+      ],
+      "associated": {
+        "entities": [
+          "companyName",
+          "departmentName",
+          "leavers",
+          "startDate"
+        ]
+      }
+    },
+    {
+      "id": "lowPrimary-highTurbulence",
+      "range": {
+        "primary": {
+          "from": 0,
+          "to": 0.5
+        },
+        "turbulence": {
+          "from": 0.5,
+          "to": 1
+        }
+      },
+      "explain": [
+        "This is significantly lower than the rest of {companyName} but most of those absences happened around the same time.",
+        "While this is substantially lower than other departments at {companyName}, those departures happened at around the same time."
+      ],
+      "advise": [
+        "This would indicate that a specific change, project or person could have triggered this to happen. Try to look at the months before the peak and reflect on what could have triggered this.",
+        "That pattern could represent that a specific change, project or person might have been a factor in these departures. If you look back over the months before you might be able to determine what caused this spike."
+      ],
+      "associated": {
+        "entities": [
+          "companyName",
+          "departmentName",
+          "leavers",
+          "startDate"
+        ]
+      }
+    },
+    {
+      "id": "zeroPrimary-zeroTurbulence",
+      "range": {
+        "primary": {
+          "from": 0,
+          "to": 0
+        },
+        "turbulence": {
+          "from": 0,
+          "to": 0
+        }
+      },
+      "describe": [
+        "{departmentName} has had no people leave since {startDate}!",
+        "Since {startDate}, the {departmentName} department has had {leavers} leave!",
+        "The {departmentName} department has had {leavers} leave since {startDate}!"
+      ],
+      "explain": [ "This is zeroPrimary-zeroTurbulence" ],
+      "associated": {
+        "entities": [
+          "companyName",
+          "departmentName",
+          "leavers",
+          "startDate"
+        ]
+      }
+    },
+    {
+      "id": "default",
+      "range": {
+        "primary": {
+          "from": 0,
+          "to": 1
+        },
+        "turbulence": {
+          "from": 0,
+          "to": 1
+        }
+      },
+      "describe": [ "This is default" ],
+      "associated": {
+        "entities": []
+      }
+    }
+  ]
+}
