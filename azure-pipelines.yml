@@ -19,6 +19,10 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
+- script: |
+    cp node_modules build/main/node_modules
+  displayName: 'copy node modules'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: 'build/main'
